@@ -11,5 +11,8 @@
   "devDependencies": {
     "embark": "^2.5.2",
     "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "ejs-cli": "^2.0.0"
   }
 }
