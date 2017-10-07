@@ -1,1 +1,1 @@
-ejs-compile dapp -o app -w
+ejs-cli --base-dir app/ "*.ejs" --out app/
