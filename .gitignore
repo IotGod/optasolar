@@ -57,8 +57,12 @@ typings/
 # dotenv environment variables file
 .env
 
-.embark
-.embark/*
+/.embark
+/.embark/*
+
+# Compiled Version
+/dist
+/temp
 
 # dependencies
 /node_modules
