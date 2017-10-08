@@ -59,3 +59,16 @@ typings/
 
 .embark
 .embark/*
+
+# dependencies
+/node_modules
+/bower_components
+.vscode/
+jsconfig.json
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log*
+testem.log
