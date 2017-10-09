@@ -3,9 +3,11 @@
   "app": {
     "css/app.css": ["app/css/material.min.css"],
     "images/": ["app/images/**"],
-    "js/app.js": ["embark.js", "app/js/**"],
+    "js/app.js": ["embark.js", "app/js/bootstrap.min.js", "app/js/material.min.js"],
     "index.html": "app/dashboard.html",
-    "css/styles.css": "app/css/styles.css"
+    "css/styles.css": "app/css/styles.css",
+    "js/jazzicon.js": "app/js/jazzicon.js",
+    "js/identicon.js": "app/js/identicon.js"
   },
   "buildDir": "dist/",
   "config": "config/",
