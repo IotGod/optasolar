@@ -1,0 +1,15 @@
+version: 2
+jobs:
+   build:
+     docker:
+       - image: circleci/node:6.11.4
+     steps:
+run:
+- type: shell
+  command: |
+  # Print all files in one line
+  ./do
+  # Print one file per line
+  embark blockchain
+
+  embark run
