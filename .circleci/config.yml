@@ -9,7 +9,6 @@ run:
   command: |
   # Print all files in one line
   ./do
-  # Print one file per line
-  embark blockchain
-
+  embark blockchain disrupt
+  ipfs daemon
   embark run
