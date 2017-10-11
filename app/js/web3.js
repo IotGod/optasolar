@@ -6,6 +6,8 @@ if (typeof web3 !== 'undefined') {
 }
 
 console.log(web3.version)
+console.log(web3.modules)
+console.log(web3.utils)
 
 var coinbase = web3.eth.coinbase;
 var balance = web3.eth.getBalance(coinbase);
