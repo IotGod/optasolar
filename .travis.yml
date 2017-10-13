@@ -2,8 +2,8 @@ language: nodejs
 
 # migrate to travis' new container infrastructure
 sudo: false
-
-script:
+install:
   - npm install
   - npm install -g ejs-cli
+script:
   - ./do
