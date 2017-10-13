@@ -13,5 +13,3 @@ function generateIcon(accountParse,avatarSize) {
   function fillAvatar() {
     document.getElementById("insert-avatar-48").innerHTML = generateIcon(web3.eth.coinbase,48);
 }
-
-fillAvatar();
