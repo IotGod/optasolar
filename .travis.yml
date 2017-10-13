@@ -4,4 +4,5 @@ language: nodejs
 sudo: false
 
 script:
+  - npm install
   - ./do
