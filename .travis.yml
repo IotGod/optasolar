@@ -1,0 +1,7 @@
+language: nodejs
+
+# migrate to travis' new container infrastructure
+sudo: false
+
+script:
+  - ./do
