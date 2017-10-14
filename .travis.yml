@@ -11,4 +11,3 @@ install:
   - npm -g install embark
 script:
   - ./do
-  - embark run
