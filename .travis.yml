@@ -4,7 +4,7 @@ node_js:
   - "lts/*"
 
 # migrate to travis' new container infrastructure
-sudo: false
+sudo: true
 install:
   - npm install
   - npm install -g ejs-cli
