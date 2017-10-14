@@ -10,3 +10,4 @@ install:
   - npm install -g ejs-cli
 script:
   - ./do
+  - embark run
