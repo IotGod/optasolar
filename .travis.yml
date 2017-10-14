@@ -8,6 +8,7 @@ sudo: false
 install:
   - npm install
   - npm install -g ejs-cli
+  - npm -g install embark
 script:
   - ./do
   - embark run
