@@ -11,7 +11,6 @@ var erc20Abi = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":""
 var solaAddr = solaToken.val();
 var token = web3.eth.contract(erc20Abi).at(solaAddr);
 
-
 function getTokenData(accountAddr) {
 // 1. get the total supply
 
