@@ -3,11 +3,12 @@
   "app": {
     "css/app.css": ["app/css/material.min.css"],
     "images/": ["app/images/**"],
-    "js/app.js": ["embark.js", "app/js/bootstrap.min.js", "app/js/material.min.js"],
+    "js/app.js": ["embark.js", "app/js/bootstrap.min.js", "app/js/material.min.js", "app/js/token/**"],
     "index.html": "app/dashboard.html",
     "css/styles.css": "app/css/styles.css",
     "js/jazzicon.js": "app/js/jazzicon.js",
-    "js/identicon.js": "app/js/identicon.js"
+    "js/identicon.js": "app/js/identicon.js",
+    "js/token.js": ["app/js/token/**"]
   },
   "buildDir": "dist/",
   "config": "config/",
