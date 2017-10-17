@@ -2,6 +2,8 @@ function getBalance(account) {
 	return web3.eth.getBalance(account)
 }
 
+document.getElementById("coinbase").innerHTML = web3.eth.coinbase;
+
 // token section
 
 var solaToken = ""
