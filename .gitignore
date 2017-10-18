@@ -76,5 +76,4 @@ jsconfig.json
 /libpeerconnection.log
 npm-debug.log*
 testem.log
-
 node-xml*
