@@ -9,7 +9,7 @@
     "js/jazzicon.js": "app/js/jazzicon.js",
     "js/identicon.js": "app/js/identicon.js",
     "js/token.js": ["app/js/token/**"],
-    "js/dashboard.js": ["app/js/dashboard-js.js"]
+    "js/dashboard/dashboard.js": ["app/js/dashboard/dashboard-js.js"]
   },
   "buildDir": "dist/",
   "config": "config/",
