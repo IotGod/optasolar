@@ -77,3 +77,9 @@ jsconfig.json
 npm-debug.log*
 testem.log
 node-xml*
+
+#Remove all un-needed html files
+
+app/dashboard-info.html
+app/header.html
+app/cards/*
