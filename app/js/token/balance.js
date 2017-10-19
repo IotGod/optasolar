@@ -1,5 +1,5 @@
 function getBalance(account) {
-	return web3.eth.getBalance(account)
+	return web3.eth.getBalance(account);
 }
 
 // token section
@@ -11,6 +11,5 @@ var solaAddr = solaToken.val();
 var token = web3.eth.contract(erc20Abi).at(solaAddr);
 
 function getSOLAbalance(address1) {
-	contract.methods.transfer('0xffcf8fdee72ac11b5c542428b35eef5769c409f0', 1).send().then(console.log).catch(console.error);
-	token.balanceOf.call(accountAddress, function (err, balance) {return balance});
+	token.balanceOf.call(address1, function (err, balance) {return balance});
 }
