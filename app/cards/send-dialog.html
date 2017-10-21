@@ -37,6 +37,10 @@
     });
     var depositDialogButton = document.querySelector('#depositMoneyDialog');
     var withdrawDialogButton = document.querySelector('#withdrawMoneyDialog');
+    function clearDialog() {
+      document.getElementById("amountDialog").value = 0;
+      document.getElementById("bigAmountDialog").innerHTML = 0;
+    }
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
     }
@@ -45,8 +49,7 @@
       document.getElementById("sendtxt").innerHTML = "Octocat";
       document.getElementById("getDialog").src = "/images/house.png";
       document.getElementById("gettxt").innerHTML = "Home";
-      document.getElementById("amountDialog").value = 0;
-      document.getElementById("bigAmountDialog").innerHTML = 0;
+      clearDialog();
       dialog.showModal();
     });
     withdrawDialogButton.addEventListener('click', function() {
@@ -54,8 +57,7 @@
       document.getElementById("sendtxt").innerHTML = "Home";
       document.getElementById("getDialog").src = "https://user-images.githubusercontent.com/7539174/31481787-0bbdfeb6-aeda-11e7-9502-7e0631c557c6.png";
       document.getElementById("gettxt").innerHTML = "Octocat";
-      document.getElementById("amountDialog").value = 0;
-      document.getElementById("bigAmountDialog").innerHTML = 0;
+      clearDialog();
       dialog.showModal();
     });
     dialog.querySelector('.close').addEventListener('click', function() {
