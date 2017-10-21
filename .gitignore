@@ -83,3 +83,4 @@ node-xml*
 app/dashboard-info.html
 app/header.html
 app/cards/*
+app/menu.html
