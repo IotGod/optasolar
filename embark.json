@@ -5,6 +5,8 @@
     "images/": ["app/images/**"],
     "js/app.js": ["embark.js", "app/js/bootstrap.min.js", "app/js/material.min.js", "app/js/account.js", "app/js/token/**"],
     "index.html": "app/dashboard.html",
+    "projects.html": "app/projects.html",
+    "projects/index.html": "app/projects.html",
     "css/styles.css": "app/css/styles.css",
     "js/jazzicon.js": "app/js/jazzicon.js",
     "js/identicon.js": "app/js/identicon.js",

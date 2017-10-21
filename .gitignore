@@ -77,3 +77,13 @@ jsconfig.json
 npm-debug.log*
 testem.log
 node-xml*
+
+#Remove all un-needed html files
+
+app/dashboard-info.html
+app/header.html
+app/cards/balances.html
+app/cards/send-dialog.html
+app/menu.html
+app/projects/projects-cards.ejs
+app/dashboard.html
