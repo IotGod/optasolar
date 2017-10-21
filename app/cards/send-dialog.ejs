@@ -5,18 +5,25 @@
       <table>
         <tbody>
           <tr>
-            <td><img width='46' height='46' src='https://user-images.githubusercontent.com/7539174/31481787-0bbdfeb6-aeda-11e7-9502-7e0631c557c6.png'></td>
-            <td><img width='21' height='37' src='https://user-images.githubusercontent.com/7539174/31481704-8e5fae1a-aed9-11e7-91e4-cbc32ca1fea7.png'></td>
-            <td><img width='46' height='46' src='https://user-images.githubusercontent.com/7539174/31481789-0ebc370e-aeda-11e7-8933-6bc8bf88cf50.jpg'></td>
+            <td><img width='46' height='46' src='https://user-images.githubusercontent.com/7539174/31481787-0bbdfeb6-aeda-11e7-9502-7e0631c557c6.png' id='sendDialog'></td>
+            <td><img width='19' height='37' src='https://user-images.githubusercontent.com/7539174/31481704-8e5fae1a-aed9-11e7-91e4-cbc32ca1fea7.png'></td>
+            <td><img width='46' height='46' src='https://user-images.githubusercontent.com/7539174/31481789-0ebc370e-aeda-11e7-8933-6bc8bf88cf50.jpg' id='getDialog'></td>
           </tr>
           <tr>
-            <td>Octocat</td>
+            <td><span id='sendtxt'>Octocat<span></td>
             <td></td>
-            <td>Hubot</td>
+            <td><span id='gettxt'>Hubot</span></td>
           </tr>
         </tbody>
       </table>
-    <br><h3>203.17 <small>SOLA</small></h3><br><p>Would you like to execute this transaction?</p></center>
+    <br><h3><span id='bigAmountDialog'>0</span><small>SOLA</small></h3><br><p>Would you like to execute this transaction?</p><br><!-- Numeric Textfield -->
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="amountDialog">
+    <label class="mdl-textfield__label" for="amountDialog">Amount</label>
+    <span class="mdl-textfield__error">Input is not a number!</span>
+  </div>
+</form></center>
     </div>
     <div class="mdl-dialog__actions">
       <button type="button" class="mdl-button continue mdl-button--colored">Continue</button>
@@ -25,11 +32,30 @@
   </dialog>
   <script>
     var dialog = document.querySelector('dialog');
-    var showDialogButton = document.querySelector('#sendMoneyDialog');
+    document.getElementById("amountDialog").addEventListener("change",function () {
+      document.getElementById("bigAmountDialog").innerHTML = document.getElementById("amountDialog").value;
+    });
+    var depositDialogButton = document.querySelector('#depositMoneyDialog');
+    var withdrawDialogButton = document.querySelector('#withdrawMoneyDialog');
     if (! dialog.showModal) {
       dialogPolyfill.registerDialog(dialog);
     }
-    showDialogButton.addEventListener('click', function() {
+    depositDialogButton.addEventListener('click', function() {
+      document.getElementById("sendDialog").src = "https://user-images.githubusercontent.com/7539174/31481787-0bbdfeb6-aeda-11e7-9502-7e0631c557c6.png";
+      document.getElementById("sendtxt").innerHTML = "Octocat";
+      document.getElementById("getDialog").src = "/images/house.png";
+      document.getElementById("gettxt").innerHTML = "Home";
+      document.getElementById("amountDialog").value = 0;
+      document.getElementById("bigAmountDialog").innerHTML = 0;
+      dialog.showModal();
+    });
+    withdrawDialogButton.addEventListener('click', function() {
+      document.getElementById("sendDialog").src = "/images/house.png";
+      document.getElementById("sendtxt").innerHTML = "Home";
+      document.getElementById("getDialog").src = "https://user-images.githubusercontent.com/7539174/31481787-0bbdfeb6-aeda-11e7-9502-7e0631c557c6.png";
+      document.getElementById("gettxt").innerHTML = "Octocat";
+      document.getElementById("amountDialog").value = 0;
+      document.getElementById("bigAmountDialog").innerHTML = 0;
       dialog.showModal();
     });
     dialog.querySelector('.close').addEventListener('click', function() {
@@ -37,7 +63,8 @@
     });
 
     dialog.querySelector('.continue').addEventListener('click', function() {
-
+      dialog.close();
+          });
 var path = require('path');
 var options = [
   {
@@ -64,7 +91,4 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("basic").addEventListener("click", doNotify);
   document.getElementById("image").addEventListener("click", doNotify);
 })
-  new Notification(options[1].title, options[1]);
-      dialog.close();
-    });
   </script>

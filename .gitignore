@@ -83,5 +83,5 @@ node-xml*
 app/dashboard-info.html
 app/header.html
 app/cards/balances.html
-app/send-dialog.html
+app/cards/send-dialog.html
 app/menu.html
