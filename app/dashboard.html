@@ -306,11 +306,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function checkConnection() {
       if(!web3.isConnected()) {
-       // show some dialog to ask the user to start a node
        gethdialog.showModal();
     } else {
        gethdialog.close();
     }
+    }
+    var intervalID = window.setInterval(myCallback, 2000);
+
+    function myCallback() {
+      checkConnection()
     }
   </script>
 </body>
