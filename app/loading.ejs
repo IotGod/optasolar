@@ -23,5 +23,10 @@
        gethdialog.close();
     }
     }
+    var intervalID = window.setInterval(myCallback, 2000);
+
+    function myCallback() {
+      checkConnection()
+    }
   </script>
 </body>
