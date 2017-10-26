@@ -125,24 +125,25 @@
               </span>
     </div>
     <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-      <button type="button" class="mdl-button fundContinueDialog">Agree</button>
-      <button type="button" class="mdl-button fundCloseDialog">Disagree</button>
+      <button type="button" class="mdl-button fundContinueDialog" id='fundCloseDialog'>Agree</button>
+      <button type="button" class="mdl-button fundCloseDialog" id='fundContinueDialog'>Disagree</button>
     </div>
   </dialog>
   <script>
     var fundInfoDialog = document.getElementById("fundInfoDialog");
-    if (! fundInfoDialog.showModal) {
+    if (!fundInfoDialog.showModal) {
       dialogPolyfill.registerDialog(fundInfoDialog);
     }
     //fundInfoDialog.showModal();
-    dialog.querySelector('.fundCloseDialog').addEventListener('click', function() {
+    fundInfoDialog.querySelector('#fundCloseDialog').addEventListener('click', function() {
       fundInfoDialog.close();
     });
     // Continue funding - Close current dialog - enter payment dialog
-    dialog.querySelector('.fundContinueDialog').addEventListener('click', function() {
+    fundInfoDialog.querySelector('#fundContinueDialog').addEventListener('click', function() {
       fundInfoDialog.close();
     });
     function createDialog(imgUrl,projectStatus,ifRunning,projectDesc,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded) {
+      console.log("createDialog was called");
       document.querySelector('#dialogAvatar').src = imgUrl;
       document.querySelector('#status-chip').innerHTML = projectStatus;
       if (projectstatus = "Currently Funding") {

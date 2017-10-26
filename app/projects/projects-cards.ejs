@@ -1,0 +1,144 @@
+  <dialog class="mdl-dialog" id='fundInfoDialog'>
+    <div class="mdl-dialog__content" id=''>
+      <img id="dialogAvatar">
+      <!-- Deletable Chip -->
+      <span class="mdl-chip mdl-chip--deletable">
+          <span class="mdl-chip__text" id='status-chip'></span>
+              </span>
+    </div>
+    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+      <button type="button" class="mdl-button fundContinueDialog" id='fundCloseDialog'>Agree</button>
+      <button type="button" class="mdl-button fundCloseDialog" id='fundContinueDialog'>Disagree</button>
+    </div>
+  </dialog>
+  <script>
+    var fundInfoDialog = document.getElementById("fundInfoDialog");
+    if (!fundInfoDialog.showModal) {
+      dialogPolyfill.registerDialog(fundInfoDialog);
+    }
+    //fundInfoDialog.showModal();
+    fundInfoDialog.querySelector('#fundCloseDialog').addEventListener('click', function() {
+      fundInfoDialog.close();
+    });
+    // Continue funding - Close current dialog - enter payment dialog
+    fundInfoDialog.querySelector('#fundContinueDialog').addEventListener('click', function() {
+      fundInfoDialog.close();
+    });
+    function createDialog(imgUrl,projectStatus,ifRunning,projectDesc,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded) {
+      console.log("createDialog was called");
+      document.querySelector('#dialogAvatar').src = imgUrl;
+      document.querySelector('#status-chip').innerHTML = projectStatus;
+      if (projectstatus = "Currently Funding") {
+        document.querySelector('#status-chip').style.background = "#2196f3";
+        document.querySelector('#status-chip').style.color = "#000";
+      }
+      if (canFund = true) {} else {
+        if(canFund = false) {} else {
+          throw "canFund variable is not boolean";
+        }
+      }
+    }
+  </script>
+<div class="mdl-grid">
+<style>
+.pic-text {
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+</style>
+  <!-- START OF CARD-->
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
+
+<!--Card inside begin -->
+<!-- Wide card with share menu button -->
+<style>
+.demo-card-wide-ethan.mdl-card {
+}
+.demo-card-wide-ethan > .mdl-card__title {
+color: #fff;
+height: 176px;
+background: url('https://user-images.githubusercontent.com/7539174/30189429-a3cd0f6a-93e8-11e7-8a69-73c7ad97e610.png') center / cover;
+}
+.demo-card-wide-ethan > .mdl-card__menu {
+color: #fff;
+}
+</style>
+
+<div class="demo-card-wide-ethan mdl-card mdl-shadow--2dp">
+<div class="mdl-card__title">
+  <h2 class="mdl-card__title-text pic-text">4885 Paseo De Vega, Irvine, CA 92603 USA</h2>
+</div>
+<div class="mdl-card__supporting-text">
+  <p>12.5 kW Panels | 10kWh Batt <br>Installer: Tesla 3013eb8205a75fd580e805f6c53d27949287eb3a</p><p>780.6 / 932 SOLA</p><div id="p1" class="mdl-progress mdl-js-progress"></div>
+  <script>
+  document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+  this.MaterialProgress.setProgress(82);
+  });
+  </script>
+</div>
+<div class="mdl-card__actions mdl-card--border">
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  onclick='fundKyler();'>
+  fund
+</button>
+<a target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href='https://earth.google.com/web/@33.6501101,-117.8224961,34.16106584a,861.8373511d,35y,0h,45t,0r/data=ClUaUxJNCiUweDgwZGNkZGU0NTUwNzYyYTU6MHhlMDdhNzk2ZWFhMjMyMTViGU8myc4200BAIZqlrsajdF3AKhI0ODg1IFBhc2VvIERlIFZlZ2EYAiABKAI'>
+3d
+</a>
+</div>
+<div class="mdl-card__menu">
+  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+    <i class="material-icons">share</i>
+  </button>
+</div>
+</div>
+  <!--Card inside end -->
+  </div>
+  <!-- END OF CARD-->
+
+  <!-- START OF CARD-->
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
+
+<!--Card inside begin -->
+<!-- Wide card with share menu button -->
+<style>
+.demo-card-wide.mdl-card {
+}
+.demo-card-wide > .mdl-card__title {
+color: #fff;
+height: 176px;
+background: url('https://user-images.githubusercontent.com/7539174/30191478-da24062e-93f5-11e7-8001-5408e1411737.png') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+color: #fff;
+}
+</style>
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+<div class="mdl-card__title">
+  <h2 class="mdl-card__title-text pic-text">523 S. Irena Ave, Redondo Beach, CA 90277 USA</h2>
+</div>
+<div class="mdl-card__supporting-text">
+  <p>5.75 kW Panels | 5 kWh Batt <br>Installer: Tesla 3013eb8205a75fd580e805f6c53d27949287eb3a</p><p>290 / 513 SOLA</p><div id="p2" class="mdl-progress mdl-js-progress"></div>
+  <script>
+  document.querySelector('#p2').addEventListener('mdl-componentupgraded', function() {
+  this.MaterialProgress.setProgress(56);
+  });
+  </script>
+</div>
+<div class="mdl-card__actions mdl-card--border">
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick='createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.",false,false,null,null,null,true,513,290)'>
+  fund
+</button>
+<a target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href='https://earth.google.com/web/@33.8341681,-118.3806704,42.29647498a,859.80223806d,35y,0h,45t,0r/data=ClIaUBJKCiUweDgwYzJiNGIxZmEzODEyNGQ6MHhiZmQ3YmIwZDQ0NzhkNWE4GehuMgXG6kBAIYmjYedcmF3AKg81MjMgUyBJcmVuYSBBdmUYAiABKAI'>
+3d
+</a>
+</div>
+<div class="mdl-card__menu">
+  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+    <i class="material-icons">share</i>
+  </button>
+</div>
+</div>
+  <!--Card inside end -->
+  </div>
+  <!-- END OF CARD-->
+</div>
