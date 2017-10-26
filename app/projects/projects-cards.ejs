@@ -2,8 +2,8 @@
     <div class="mdl-dialog__content" id=''>
       <img id="dialogAvatar" width='128' height='128' style="border-radius: 100%">
       <!-- Deletable Chip -->
-      <span class="mdl-chip mdl-chip--deletable">
-          <span class="mdl-chip__text" id='status-chip'></span>
+      <span class="mdl-chip mdl-chip--deletable" id='status-chip'>
+          <span class="mdl-chip__text" id='status-chip-txt'></span>
               </span>
     </div>
     <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
@@ -27,7 +27,7 @@
     function createDialog(imgUrl,projectStatus,ifRunning,projectDesc,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded) {
       console.log("createDialog was called");
       document.querySelector('#dialogAvatar').src = imgUrl;
-      document.querySelector('#status-chip').innerHTML = projectStatus;
+      document.querySelector('#status-chip-txt').innerHTML = projectStatus;
       if (projectstatus = "Currently Funding") {
         document.querySelector('#status-chip').style.background = "#2196f3";
         document.querySelector('#status-chip').style.color = "#000";
