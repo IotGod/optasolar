@@ -11,7 +11,8 @@
     "js/jazzicon.js": "app/js/jazzicon.js",
     "js/identicon.js": "app/js/identicon.js",
     "js/token.js": ["app/js/token/**"],
-    "js/dashboard/dashboard.js": ["app/js/dashboard/dashboard-js.js"]
+    "js/dashboard/dashboard.js": ["app/js/dashboard/dashboard-js.js"],
+    "favicon.ico": "favicon.ico"
   },
   "buildDir": "dist/",
   "config": "config/",

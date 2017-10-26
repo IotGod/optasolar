@@ -88,3 +88,4 @@ app/menu.html
 app/projects/projects-cards.ejs
 app/dashboard.html
 app/loading.html
+app/projects.html
