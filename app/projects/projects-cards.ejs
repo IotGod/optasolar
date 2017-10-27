@@ -1,16 +1,36 @@
-  <dialog class="mdl-dialog" id='fundInfoDialog'>
+<style>
+#fundInfoDialog {
+  overflow: scroll;
+  width: calc(100%-64px);
+}
+</style>
+<dialog class="mdl-dialog" id='fundInfoDialog'>
     <div class="mdl-dialog__content" id=''>
+      <div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    <img id="dialogAvatar"style="border-radius: 100%" class="mdl-list__item-avatar" width="64" height="64">
+    <span id='dialogProjectName'></span>
+    <span class="mdl-list__item-text-body" id='dialogAddress'></span>
+    <span class="mdl-chip mdl-chip--deletable" id='status-chip'><span class="mdl-chip__text" id='status-chip-txt'></span></span></span>
+    <br><p id='dialogDescTxt'></p>
+    <span class="mdl-list__item-secondary-content">
+      <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect mdl-list__item-secondary-action" for="dialogStar">
+  <input type="checkbox" id="dialogStar" class="mdl-icon-toggle__input" checked>
+  <i class="mdl-icon-toggle__label material-icons">star</i>
+</label>
+    </span>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    1
+  </div>
+  <div class="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    2
+  </div>
+</div>
       <div>
-      <img id="dialogAvatar" width='128' height='128' style="border-radius: 100%">
-      <!-- Deletable Chip -->
-      <h2 id='dialogProjectName'></h2>
-      <h5 id='dialogAddress'></h5>
-      <span class="mdl-chip mdl-chip--deletable" id='status-chip'>
-          <span class="mdl-chip__text" id='status-chip-txt'></span>
-              </span>
-            </div>
+</ul>
             <br>
-            <p id='dialogDescTxt'></p>
+            </div>
     </div>
     <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
       <button type="button" class="mdl-button fundContinueDialog" id='fundCloseDialog'>Agree</button>
@@ -135,7 +155,7 @@ color: #fff;
   </script>
 </div>
 <div class="mdl-card__actions mdl-card--border">
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick='createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"Ethan Horoschack - Tesla","5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.","523 South Irena Ave., Redondo Beach, CA",false,false,null,null,null,true,513,290)'>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick='createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"5.75 kW - Tesla","5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.","Redondo Beach, CA",false,false,null,null,null,true,513,290)'>
   fund
 </button>
 <a target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href='https://earth.google.com/web/@33.8341681,-118.3806704,42.29647498a,859.80223806d,35y,0h,45t,0r/data=ClIaUBJKCiUweDgwYzJiNGIxZmEzODEyNGQ6MHhiZmQ3YmIwZDQ0NzhkNWE4GehuMgXG6kBAIYmjYedcmF3AKg81MjMgUyBJcmVuYSBBdmUYAiABKAI'>
