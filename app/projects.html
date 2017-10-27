@@ -121,6 +121,8 @@
       <div>
       <img id="dialogAvatar" width='128' height='128' style="border-radius: 100%">
       <!-- Deletable Chip -->
+      <h2 id='dialogProjectName'></h2>
+      <h5 id='dialogAddress'></h5>
       <span class="mdl-chip mdl-chip--deletable" id='status-chip'>
           <span class="mdl-chip__text" id='status-chip-txt'></span>
               </span>
@@ -146,9 +148,11 @@
     fundInfoDialog.querySelector('#fundContinueDialog').addEventListener('click', function() {
       fundInfoDialog.close();
     });
-    function createDialog(imgUrl,projectStatus,ifRunning,projectDesc,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded) {
+    function createDialog(imgUrl,projectStatus,ifRunning,projectName,projectDesc,projectAddr,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded) {
       console.log("createDialog was called");
       document.querySelector('#dialogDescTxt').innerHTML = projectDesc;
+      document.querySelector('#dialogAddress').innerHTML = projectAddr;
+      fundInfoDialog.querySelector('#dialogProjectName').innerHTML = projectName;
       document.querySelector('#dialogAvatar').src = imgUrl;
       document.querySelector('#status-chip-txt').innerHTML = projectStatus;
       if (projectstatus = "Currently Funding") {
@@ -249,7 +253,7 @@ color: #fff;
   </script>
 </div>
 <div class="mdl-card__actions mdl-card--border">
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick='createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.",false,false,null,null,null,true,513,290)'>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick='createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"Ethan Horoschack - Tesla","5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.","523 South Irena Ave., Redondo Beach, CA",false,false,null,null,null,true,513,290)'>
   fund
 </button>
 <a target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href='https://earth.google.com/web/@33.8341681,-118.3806704,42.29647498a,859.80223806d,35y,0h,45t,0r/data=ClIaUBJKCiUweDgwYzJiNGIxZmEzODEyNGQ6MHhiZmQ3YmIwZDQ0NzhkNWE4GehuMgXG6kBAIYmjYedcmF3AKg81MjMgUyBJcmVuYSBBdmUYAiABKAI'>
