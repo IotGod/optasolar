@@ -12,7 +12,7 @@
     "js/identicon.js": "app/js/identicon.js",
     "js/token.js": ["app/js/token/**"],
     "js/dashboard/dashboard.js": ["app/js/dashboard/dashboard-js.js"],
-    "favicon.ico": "favicon.ico"
+    "favicon.ico": "app/favicon.ico"
   },
   "buildDir": "dist/",
   "config": "config/",
