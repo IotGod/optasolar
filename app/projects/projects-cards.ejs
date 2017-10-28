@@ -4,7 +4,7 @@
   width: calc(100%-64px);
 }
 .fundInfoDialog {
-  width: 90%;
+  width: 95%;
 }
 </style>
 <dialog class="mdl-dialog fundInfoDialog" id='fundInfoDialog'>
@@ -28,6 +28,22 @@
   </div>
   <div class="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
     2
+  </div>
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    1
+  </div>
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    2
+  </div>
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    3
+  </div>
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    <div id="map"></div>
+<!-- Replace the value of the key parameter with your own API key. -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCd8xXmD0Toyr34t3ymswA76pyfcZlazg&callback=initMap">
+</script>
   </div>
 </div>
       <div>
@@ -53,7 +69,7 @@
     fundInfoDialog.querySelector('#fundContinueDialog').addEventListener('click', function() {
       fundInfoDialog.close();
     });
-    function createDialog(imgUrl,projectStatus,ifRunning,projectName,projectDesc,projectAddr,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded) {
+    function createDialog(imgUrl,projectStatus,ifRunning,projectName,projectDesc,projectAddr,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded,projectlat,projectlong) {
       console.log("createDialog was called");
       document.querySelector('#dialogDescTxt').innerHTML = projectDesc;
       document.querySelector('#dialogAddress').innerHTML = projectAddr;
@@ -68,6 +84,17 @@
         if(canFund = false) {} else {
           throw "canFund variable is not boolean";
         }
+      }
+      function initMap() {
+        var uluru = {lat: projectlat, lng: projectlong};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
       }
       fundInfoDialog.showModal();
     }
@@ -158,7 +185,7 @@ color: #fff;
   </script>
 </div>
 <div class="mdl-card__actions mdl-card--border">
-  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick='createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"5.75 kW - Tesla","5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.","Redondo Beach, CA",false,false,null,null,null,true,513,290)'>
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick='createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"5.75 kW - Tesla","5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.","Redondo Beach, CA",false,false,null,null,null,true,513,290)',33.834168,-118.380670>
   fund
 </button>
 <a target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href='https://earth.google.com/web/@33.8341681,-118.3806704,42.29647498a,859.80223806d,35y,0h,45t,0r/data=ClIaUBJKCiUweDgwYzJiNGIxZmEzODEyNGQ6MHhiZmQ3YmIwZDQ0NzhkNWE4GehuMgXG6kBAIYmjYedcmF3AKg81MjMgUyBJcmVuYSBBdmUYAiABKAI'>
