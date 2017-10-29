@@ -11,6 +11,10 @@
   width: 90%;
   height: 100px;
 }
+
+.colorfulEthanFund {
+  background-color: #00e676;
+}
 </style>
 <dialog class="mdl-dialog fundInfoDialog" id='fundInfoDialog'>
     <div class="mdl-dialog__content" id=''>
@@ -23,9 +27,9 @@
     <br><p id='dialogDescTxt'></p>
     <span class="mdl-list__item-secondary-content">
       <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect mdl-list__item-secondary-action" for="dialogStar">
-  <input type="checkbox" id="dialogStar" class="mdl-icon-toggle__input" checked>
+  <!--<input type="checkbox" id="dialogStar" class="mdl-icon-toggle__input" checked>
   <i class="mdl-icon-toggle__label material-icons">star</i>
-</label>
+</label>-->
     </span>
   </div>
   <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
@@ -47,17 +51,20 @@
     <div id="map"></div>
   </div>
   <!--the new stuff on the new row -->
-  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone" height='50px'>
+<center><h2>My Contribution</h2></center>
   </div>
   <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-
+<span id='amountShareTxt'></span>%
   </div>
   <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-
+<span id='amountSOLATxt'></span> <small>SOLA</small>
   </div>
   <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
-
+<span id='amountmyEarnings'></span> <small>SOLA</small>
+  </div>
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+<span id='amountmyCO2'></span> <small>kg</small>
   </div>
 </div>
       <div>
@@ -65,10 +72,7 @@
             <br>
             </div>
     </div>
-    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-      <button type="button" class="mdl-button fundContinueDialog" id='fundCloseDialog'>Agree</button>
-      <button type="button" class="mdl-button fundCloseDialog" id='fundContinueDialog'>Disagree</button>
-    </div>
+<div id='ethansStupidButtons'></div>
   </dialog>
   <script>
     var fundInfoDialog = document.getElementById("fundInfoDialog");
@@ -112,6 +116,9 @@
         if(canFund = false) {} else {
           throw "canFund variable is not boolean";
         }
+      }
+      if (projectStatus = "funding") {
+        document.querySelector('#ethansStupidButtons').innerHTML = '<div class="mdl-dialog__actions mdl-dialog__actions--full-width"><button type="button" class="mdl-button">Cancel</button><button type="button" class="mdl-button colorfulEthanFund">Fund</button></div>';
       }
       fundInfoDialog.showModal();
       console.log(projectlat,projectlong);
