@@ -10,7 +10,7 @@ install:
   - npm install -g ejs-cli
   - npm -g install embark
 script:
-  - screen -d embark blockchain
+  - screen -d -m embark blockchain
   - ./do
   - embark build
 after_script:
