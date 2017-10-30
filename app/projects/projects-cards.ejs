@@ -1,0 +1,253 @@
+<style>
+#fundInfoDialog {
+  overflow: scroll;
+  width: calc(100%-64px);
+}
+.fundInfoDialog {
+  width: 90%;
+  height: 90%;
+}
+#map {
+  width: 90%;
+  height: 100px;
+}
+
+.colorfulEthanFund {
+  background-color: #00e676;
+}
+
+.dialogicon {
+  width: 50px;
+  position:relative;
+  top:16;
+  right:16;
+}
+
+.tableProject {
+/*
+  border-width: 5px;
+  border-color: #FF6D00;
+*/
+  border: 1px solid #ffccbc;
+  margin: 0px;
+  padding: 8px;
+}
+
+</style>
+<dialog class="mdl-dialog fundInfoDialog" id='fundInfoDialog'>
+    <div class="mdl-dialog__content" id=''>
+      <div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    <img id="dialogAvatar"style="border-radius: 100%" class="mdl-list__item-avatar" width="64" height="64">
+    <span id='dialogProjectName'></span>
+    <span class="mdl-list__item-text-body" id='dialogAddress'></span>
+    <span class="mdl-chip mdl-chip--deletable" id='status-chip'><span class="mdl-chip__text" id='status-chip-txt'></span></span></span>
+    <br><p id='dialogDescTxt'></p>
+    <span class="mdl-list__item-secondary-content">
+      <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect mdl-list__item-secondary-action" for="dialogStar">
+  <!--<input type="checkbox" id="dialogStar" class="mdl-icon-toggle__input" checked>
+  <i class="mdl-icon-toggle__label material-icons">star</i>
+</label>-->
+    </span>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+
+  </div>
+  <div class="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    2
+  </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+      <!-- Potential CO2 Avoidence or [daily CO2 and lifetime CO2] -->
+      CO2
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+      2
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+      <img src='/images/weather-sunny.svg' class='dialogicon'></img>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+      <div id="map"></div>
+  </div>
+  <!--the new stuff on the new row -->
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+<center><h4>My Contribution</h4></center><br>
+</div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+<img src='/images/chart-arc.svg' class='dialogicon'></img>
+<span id='amountShareTxt'></span>%
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+<span id='amountSOLATxt'></span> <small>SOLA</small>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+<span id='amountmyEarnings'></span> <small>SOLA</small>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+<span id='amountmyCO2'></span> <small>kg</small>
+  </div>
+</div>
+      <div>
+</ul>
+            <br>
+            </div>
+    </div>
+<div id='ethansStupidButtons'></div>
+  </dialog>
+  <script>
+    var fundInfoDialog = document.getElementById("fundInfoDialog");
+    if (!fundInfoDialog.showModal) {
+      dialogPolyfill.registerDialog(fundInfoDialog);
+    }
+    //fundInfoDialog.showModal();
+    fundInfoDialog.querySelector('#fundCloseDialog').addEventListener('click', function() {
+      fundInfoDialog.close();
+    });
+    // Continue funding - Close current dialog - enter payment dialog
+    fundInfoDialog.querySelector('#fundContinueDialog').addEventListener('click', function() {
+      fundInfoDialog.close();
+    });
+    function initMap(gLat,gLong) {
+      var uluru = {lat: gLat, lng: gLong};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 18,
+        center: uluru,
+        mapTypeId: 'roadmap'
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+      console.log(gLat);
+      console.log(gLong);
+    }
+    function createDialog(imgUrl,projectStatus,ifRunning,projectName,projectDesc,projectAddr,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded,projectlat,projectlong) {
+      console.log("createDialog was called");
+      document.querySelector('#dialogDescTxt').innerHTML = projectDesc;
+      document.querySelector('#dialogAddress').innerHTML = projectAddr;
+      fundInfoDialog.querySelector('#dialogProjectName').innerHTML = projectName;
+      document.querySelector('#dialogAvatar').src = imgUrl;
+      document.querySelector('#status-chip-txt').innerHTML = projectStatus;
+      if (projectstatus = "Currently Funding") {
+        document.querySelector('#status-chip').style.background = "#2196f3";
+        document.querySelector('#status-chip').style.color = "#000";
+      }
+      if (canFund = true) {} else {
+        if(canFund = false) {} else {
+          throw "canFund variable is not boolean";
+        }
+      }
+      if (projectStatus = "funding") {
+        document.querySelector('#ethansStupidButtons').innerHTML = '<div class="mdl-dialog__actions"><button type="button" class="mdl-button" online="fundInfoDialog.close()">Cancel</button><button type="button" class="mdl-button colorfulEthanFund">Fund</button></div>';
+      }
+      fundInfoDialog.showModal();
+      console.log(projectlat,projectlong);
+      initMap(projectlat,projectlong);
+    }
+    function dialog2() {
+      createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"5.75 kW - Tesla","5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.","Redondo Beach, CA",false,false,null,null,null,true,513,290,33.834168,-118.380670);
+    }
+  </script>
+<div class="mdl-grid">
+<style>
+.pic-text {
+    color: #fff;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+</style>
+  <!-- START OF CARD-->
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
+
+<!--Card inside begin -->
+<!-- Wide card with share menu button -->
+<style>
+.demo-card-wide-ethan.mdl-card {
+}
+.demo-card-wide-ethan > .mdl-card__title {
+color: #fff;
+height: 176px;
+background: url('https://user-images.githubusercontent.com/7539174/30189429-a3cd0f6a-93e8-11e7-8a69-73c7ad97e610.png') center / cover;
+}
+.demo-card-wide-ethan > .mdl-card__menu {
+color: #fff;
+}
+</style>
+
+<div class="demo-card-wide-ethan mdl-card mdl-shadow--2dp">
+<div class="mdl-card__title">
+  <h2 class="mdl-card__title-text pic-text">4885 Paseo De Vega, Irvine, CA 92603 USA</h2>
+</div>
+<div class="mdl-card__supporting-text">
+  <p>12.5 kW Panels | 10kWh Batt <br>Installer: Tesla 3013eb8205a75fd580e805f6c53d27949287eb3a</p><p>780.6 / 932 SOLA</p><div id="p1" class="mdl-progress mdl-js-progress"></div>
+  <script>
+  document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+  this.MaterialProgress.setProgress(82);
+  });
+  </script>
+</div>
+<div class="mdl-card__actions mdl-card--border">
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"  onclick='fundKyler();'>
+  fund
+</button>
+<a target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href='https://earth.google.com/web/@33.6501101,-117.8224961,34.16106584a,861.8373511d,35y,0h,45t,0r/data=ClUaUxJNCiUweDgwZGNkZGU0NTUwNzYyYTU6MHhlMDdhNzk2ZWFhMjMyMTViGU8myc4200BAIZqlrsajdF3AKhI0ODg1IFBhc2VvIERlIFZlZ2EYAiABKAI'>
+3d
+</a>
+</div>
+<div class="mdl-card__menu">
+  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+    <i class="material-icons">share</i>
+  </button>
+</div>
+</div>
+  <!--Card inside end -->
+  </div>
+  <!-- END OF CARD-->
+
+  <!-- START OF CARD-->
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone mdl-cell--6-col-tablet">
+
+<!--Card inside begin -->
+<!-- Wide card with share menu button -->
+<style>
+.demo-card-wide.mdl-card {
+}
+.demo-card-wide > .mdl-card__title {
+color: #fff;
+height: 176px;
+background: url('https://user-images.githubusercontent.com/7539174/30191478-da24062e-93f5-11e7-8001-5408e1411737.png') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+color: #fff;
+}
+</style>
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+<div class="mdl-card__title">
+  <h2 class="mdl-card__title-text pic-text">523 S. Irena Ave, Redondo Beach, CA 90277 USA</h2>
+</div>
+<div class="mdl-card__supporting-text">
+  <p>5.75 kW Panels | 5 kWh Batt <br>Installer: Tesla 3013eb8205a75fd580e805f6c53d27949287eb3a</p><p>290 / 513 SOLA</p><div id="p2" class="mdl-progress mdl-js-progress"></div>
+  <script>
+  document.querySelector('#p2').addEventListener('mdl-componentupgraded', function() {
+  this.MaterialProgress.setProgress(56);
+  });
+  </script>
+</div>
+<div class="mdl-card__actions mdl-card--border">
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick='dialog2()'>
+  fund
+</button>
+<a target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" href='https://earth.google.com/web/@33.8341681,-118.3806704,42.29647498a,859.80223806d,35y,0h,45t,0r/data=ClIaUBJKCiUweDgwYzJiNGIxZmEzODEyNGQ6MHhiZmQ3YmIwZDQ0NzhkNWE4GehuMgXG6kBAIYmjYedcmF3AKg81MjMgUyBJcmVuYSBBdmUYAiABKAI'>
+3d
+</a>
+</div>
+<div class="mdl-card__menu">
+  <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+    <i class="material-icons">share</i>
+  </button>
+</div>
+</div>
+  <!--Card inside end -->
+  </div>
+  <!-- END OF CARD-->
+</div>

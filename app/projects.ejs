@@ -2,6 +2,7 @@
   <head>
 <%- include('header.ejs') %>
 <script src='/js/dashboard/dashboard-js.js'></script>
+<link rel="stylesheet" type="text/css" href="/css/projects.css" />
   </head>
   <body>
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
@@ -14,6 +15,9 @@
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
+    </script>
+    <%- include('loading.ejs') %>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCd8xXmD0Toyr34t3ymswA76pyfcZlazg">
     </script>
   </body>
 </html>

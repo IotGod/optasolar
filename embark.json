@@ -1,8 +1,7 @@
 {
   "contracts": ["app/contracts/**"],
   "app": {
-    "css/app.css": ["app/css/material.min.css"],
-    "images/": ["app/images/**"],
+    "css/app.css": ["app/css/material.min.css","app/css/material-components-web.min.css","app/css/bootstrap-grid.min.css"],
     "js/app.js": ["embark.js", "app/js/bootstrap.min.js", "app/js/material.min.js", "app/js/account.js", "app/js/token/**"],
     "index.html": "app/dashboard.html",
     "projects.html": "app/projects.html",
@@ -11,7 +10,8 @@
     "js/jazzicon.js": "app/js/jazzicon.js",
     "js/identicon.js": "app/js/identicon.js",
     "js/token.js": ["app/js/token/**"],
-    "js/dashboard/dashboard.js": ["app/js/dashboard/dashboard-js.js"]
+    "js/dashboard/dashboard.js": ["app/js/dashboard/dashboard-js.js"],
+    "css/projects.css": ["app/css/dialog-polyfill.min.css"]
   },
   "buildDir": "dist/",
   "config": "config/",

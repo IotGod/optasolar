@@ -1,0 +1,32 @@
+<body>
+  <button type="button" class="mdl-button show-modal">Unable to connect to node</button>
+  <dialog class="mdl-dialog" id="offlineDialog">
+    <div class="mdl-dialog__content">
+      <img src="/images/solariot.png">
+      <p>
+        Sorry... We couldn't connect to your Geth Node. Please start geth or check your settings.
+      </p>
+    </div>
+    <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+    </div>
+  </dialog>
+  <script>
+    var gethdialog = document.getElementById("offlineDialog");
+    if (! gethdialog.showModal) {
+      dialogPolyfill.registerDialog(gethdialog);
+    }
+
+    function checkConnection() {
+      if(!web3.isConnected()) {
+       gethdialog.showModal();
+    } else {
+       gethdialog.close();
+    }
+    }
+    //var intervalID = window.setInterval(myCallback, 2000);
+
+    function myCallback() {
+      checkConnection()
+    }
+  </script>
+</body>

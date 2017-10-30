@@ -85,5 +85,7 @@ app/header.html
 app/cards/balances.html
 app/cards/send-dialog.html
 app/menu.html
-app/projects/projects-cards.ejs
+app/projects/projects-cards.html
 app/dashboard.html
+app/loading.html
+app/projects.html
