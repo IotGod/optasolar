@@ -52,7 +52,7 @@
   </div>
   <!--the new stuff on the new row -->
   <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone" height='50px'>
-<center><h2>My Contribution</h2></center>
+<center><h4>My Contribution</h4></center>
   </div>
   <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
 <span id='amountShareTxt'></span>%
@@ -118,7 +118,7 @@
         }
       }
       if (projectStatus = "funding") {
-        document.querySelector('#ethansStupidButtons').innerHTML = '<div class="mdl-dialog__actions"><button type="button" class="mdl-button">Cancel</button><button type="button" class="mdl-button colorfulEthanFund">Fund</button></div>';
+        document.querySelector('#ethansStupidButtons').innerHTML = '<div class="mdl-dialog__actions"><button type="button" class="mdl-button" online="fundInfoDialog.close()">Cancel</button><button type="button" class="mdl-button colorfulEthanFund">Fund</button></div>';
       }
       fundInfoDialog.showModal();
       console.log(projectlat,projectlong);
