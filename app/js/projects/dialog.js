@@ -43,7 +43,7 @@
     if (projectStatus = "funding") {
       document.querySelector('#ethansStupidButtons').innerHTML = '<div class="mdl-dialog__actions"><button type="button" class="mdl-button" online="fundInfoDialog.close()">Cancel</button><button type="button" class="mdl-button colorfulEthanFund">Fund</button></div>';
       document.querySelector('#amountmyCO2').innerHTML = co2Potential;
-      document.querySelector('#amountmyCO2').innerHTML = co2Potential;
+      document.querySelector('#co2txtbox1desc').innerHTML = "Annual CO2 Offset";
     }
     fundInfoDialog.showModal();
     console.log(projectlat,projectlong);
