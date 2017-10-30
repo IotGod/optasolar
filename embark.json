@@ -3,7 +3,7 @@
   "app": {
     "css/app.css": ["app/css/material.min.css","app/css/material-components-web.min.css","app/css/bootstrap-grid.min.css"],
     "js/app.js": ["embark.js", "app/js/bootstrap.min.js", "app/js/material.min.js", "app/js/account.js", "app/js/token/**"],
-    "js/project.js":["app/js/projects/**"]
+    "js/project.js":["app/js/projects/**"],
     "index.html": "app/dashboard.html",
     "projects.html": "app/projects.html",
     "projects/index.html": "app/projects.html",
