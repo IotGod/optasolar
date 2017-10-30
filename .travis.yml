@@ -9,6 +9,10 @@ install:
   - npm install
   - npm install -g ejs-cli
   - npm -g install embark
+before_script:
+  - screen -d embark blockchain
 script:
   - ./do
   - embark build
+after_script:
+  - killall geth
