@@ -1,0 +1,100 @@
+<style>
+#fundInfoDialog {
+  overflow: scroll;
+  width: calc(100%-64px);
+}
+.fundInfoDialog {
+  width: 90%;
+  height: 90%;
+}
+#map {
+  width: 90%;
+  height: 100px;
+}
+
+.colorfulEthanFund {
+  background-color: #00e676;
+}
+
+.dialogicon {
+  width: 50px;
+}
+
+.tableProject {
+/*
+  border-width: 5px;
+  border-color: #FF6D00;
+*/
+  border: 1px solid #ffccbc;
+  margin: 0px;
+  padding: 8px;
+}
+.dialogDesc {
+
+}
+
+</style>
+<dialog class="mdl-dialog fundInfoDialog" id='fundInfoDialog'>
+    <div class="mdl-dialog__content" id=''>
+      <div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    <img id="dialogAvatar"style="border-radius: 100%" class="mdl-list__item-avatar" width="64" height="64">
+    <span id='dialogProjectName'></span>
+    <span class="mdl-list__item-text-body" id='dialogAddress'></span>
+    <span class="mdl-chip mdl-chip--deletable" id='status-chip'><span class="mdl-chip__text" id='status-chip-txt'></span></span></span>
+    <br><p id='dialogDescTxt'></p>
+    <span class="mdl-list__item-secondary-content">
+      <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect mdl-list__item-secondary-action" for="dialogStar">
+  <!--<input type="checkbox" id="dialogStar" class="mdl-icon-toggle__input" checked>
+  <i class="mdl-icon-toggle__label material-icons">star</i>
+</label>-->
+    </span>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+
+  </div>
+  <div class="mdl-cell mdl-cell--5-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+    2
+  </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+      <!-- Potential CO2 Avoidence or [daily CO2 and lifetime CO2] -->
+    <img src='/images/co2.svg' class='dialogicon'></img>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+      2
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+      <img src='/images/weather-sunny.svg' class='dialogicon'></img>
+    </div>
+    <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+      <div id="map"></div>
+  </div>
+  <!--the new stuff on the new row -->
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+<center><h4>My Contribution</h4></center><br>
+</div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+<img src='/images/chart-arc.svg' class='dialogicon'></img>
+<h5><span id='amountShareTxt'></span>%</h5>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+<span id='amountSOLATxt'></span> <small>SOLA</small>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+<span id='amountmyEarnings'></span> <small>SOLA</small>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
+    <img src='/images/co2.svg' class='dialogicon'></img>
+    <span class='dialogDesc'></span>
+    <h5>
+    <span id='amountmyCO2'></span> <small>kg</small>
+  </h5>
+  </div>
+</div>
+      <div>
+</ul>
+            <br>
+            </div>
+    </div>
+<div id='ethansStupidButtons'></div>
+  </dialog>

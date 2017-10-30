@@ -24,7 +24,7 @@
     console.log(gLat);
     console.log(gLong);
   }
-  function createDialog(imgUrl,projectStatus,ifRunning,projectName,projectDesc,projectAddr,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded,projectlat,projectlong) {
+  function createDialog(imgUrl,projectStatus,ifRunning,projectName,projectDesc,projectAddr,ifOwner,ifInvestor,dailyPayout,weekPayout,monthPayout,canFund,totalneeded,totalfunded,projectlat,projectlong,co2Potential,co2Daily,co2Yearly,co2MeDaily,co2MeLifetime) {
     console.log("createDialog was called");
     document.querySelector('#dialogDescTxt').innerHTML = projectDesc;
     document.querySelector('#dialogAddress').innerHTML = projectAddr;
@@ -42,11 +42,13 @@
     }
     if (projectStatus = "funding") {
       document.querySelector('#ethansStupidButtons').innerHTML = '<div class="mdl-dialog__actions"><button type="button" class="mdl-button" online="fundInfoDialog.close()">Cancel</button><button type="button" class="mdl-button colorfulEthanFund">Fund</button></div>';
+      document.querySelector('#amountmyCO2').innerHTML = co2Potential;
+      document.querySelector('#amountmyCO2').innerHTML = co2Potential;
     }
     fundInfoDialog.showModal();
     console.log(projectlat,projectlong);
     initMap(projectlat,projectlong);
   }
   function dialog2() {
-    createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"5.75 kW - Tesla","5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.","Redondo Beach, CA",false,false,null,null,null,true,513,290,33.834168,-118.380670);
+    createDialog("https://solariot.nyc3.digitaloceanspaces.com/app/ethan-avatar.png","funding",false,"5.75 kW - Tesla","5.75 kW Panels | 5 kWh Batt, produced by Tesla. Expected Installation Date: Dec 17.","Redondo Beach, CA",false,false,null,null,null,true,513,290,33.834168,-118.380670,"2,200",null,null,null,null);
   }
