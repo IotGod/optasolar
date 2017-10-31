@@ -40,10 +40,11 @@
       <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
     <img id="dialogAvatar"style="border-radius: 100%" class="mdl-list__item-avatar" width="64" height="64">
-    <span id='dialogProjectName'></span>
-    <span class="mdl-list__item-text-body" id='dialogAddress'></span>
+    <h4>
+    <span id='dialogProjectName'></span></h4><h6>
+    <span class="mdl-list__item-text-body" id='dialogAddress'></span></h6>
     <span class="mdl-chip mdl-chip--deletable" id='status-chip'><span class="mdl-chip__text" id='status-chip-txt'></span></span></span>
-    <br><p id='dialogDescTxt'></p>
+    <br><h6 id='dialogDescTxt'></h6>
     <span class="mdl-list__item-secondary-content">
       <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect mdl-list__item-secondary-action" for="dialogStar">
   <!--<input type="checkbox" id="dialogStar" class="mdl-icon-toggle__input" checked>
@@ -60,16 +61,21 @@
     <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
       <!-- Potential CO2 Avoidence or [daily CO2 and lifetime CO2] -->
     <img src='/images/co2.svg' class='dialogicon'></img>
-    <span class='dialogDesc' id='co2txtbox1desc'>Annual Total CO2 Offset</span>
+    <span class='dialogDesc'>Annual Total CO2 Offset</span>
     <h4>
-    <span id='amountmyCO2'>16,820 </span> <small>kg</small>
+    <span>16,820 </span> <small>kg</small>
   </h4>
     </div>
     <div class="mdl-cell mdl-cell--3-col mdl-cell--6-col-tablet mdl-cell--12-col-phone tableProject">
       <!-- Potential CO2 Avoidence or [daily CO2 and lifetime CO2] -->
     <span class='dialogDesc' id='energytxtbox2desc'></span>
     <!-- Accent-colored raised button with ripple -->
-    <div class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+    <div role="progressbar" class="mdc-linear-progress">
+      <div class="mdc-linear-progress__buffering-dots"></div>
+      <div class="mdc-linear-progress__buffer"></div>
+      </div>
+
+      <!--<canvas id="myChart" width="400" height="400"></canvas>-->
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
       View
     </button>
