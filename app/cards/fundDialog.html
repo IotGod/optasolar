@@ -27,10 +27,13 @@
   </div>
   <div class="mdl-dialog__actions">
     <button type="button" class="mdl-button close" onclick='fundDialog1.close();'>Execute</button>
-    <button type="button" class="mdl-button close" onclick='fundDialog1.close();notification.MaterialSnackbar.showSnackbar(data);'>Cancel</button>
+    <button type="button" class="mdl-button close" onclick='fundDialog1.close();'>Cancel</button>
   </div>
 </dialog>
 <script>
+document.getElementById("amountDialog").addEventListener("change",function () {
+  document.getElementById("bigAmountDialog").innerHTML = document.getElementById("amountDialog").value;
+});
   var fundDialog1 = document.querySelector('#blahblahfunddialog');
   if (! fundDialog1.showModal) {
     dialogPolyfill.registerDialog(fundDialog1);
@@ -40,9 +43,6 @@
   });
   dialog.querySelector('.close').addEventListener('click', function() {
     fundDialog1.close();
-  });
-  document.getElementById("amountDialog").addEventListener("change",function () {
-    document.getElementById("bigAmountDialog").innerHTML = document.getElementById("amountDialog").value;
   });
   var notification = document.querySelector('.mdl-js-snackbar');
 var data = {
