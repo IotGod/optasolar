@@ -1,0 +1,54 @@
+<dialog class="mdl-dialog" id='blahblahfunddialog'>
+  <h4 class="mdl-dialog__title">Send SOLA</h4>
+  <div class="mdl-dialog__content">
+    <center>
+    <table>
+      <tbody>
+        <tr>
+          <td><img width='46' height='46' src='https://user-images.githubusercontent.com/7539174/31481787-0bbdfeb6-aeda-11e7-9502-7e0631c557c6.png' id='sendDialog'></td>
+          <td><img width='19' height='37' src='https://user-images.githubusercontent.com/7539174/31481704-8e5fae1a-aed9-11e7-91e4-cbc32ca1fea7.png'></td>
+          <td><img width='46' height='46' src='/images/ethan-avatar.png' id='getDialog'></td>
+        </tr>
+        <tr>
+          <td><span id='sendtxt'>Octocat<span></td>
+          <td></td>
+          <td><span id='gettxt'>Ethan</span></td>
+        </tr>
+      </tbody>
+    </table>
+  <br><h3><span id='bigAmountDialog'>0</span><small>SOLA</small></h3><br><p>Would you like to execute this transaction?</p><br><!-- Numeric Textfield -->
+<form action="#">
+<div class="mdl-textfield mdl-js-textfield">
+  <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="amountDialog">
+  <label class="mdl-textfield__label" for="amountDialog">Amount</label>
+  <span class="mdl-textfield__error">Input is not a number!</span>
+</div>
+</form></center>
+  </div>
+  <div class="mdl-dialog__actions">
+    <button type="button" class="mdl-button close" onclick='fundDialog1.close();'>Execute</button>
+    <button type="button" class="mdl-button close" onclick='fundDialog1.close();'>Cancel</button>
+  </div>
+</dialog>
+<script>
+document.getElementById("amountDialog").addEventListener("change",function () {
+  document.getElementById("bigAmountDialog").innerHTML = document.getElementById("amountDialog").value;
+});
+  var fundDialog1 = document.querySelector('#blahblahfunddialog');
+  if (! fundDialog1.showModal) {
+    dialogPolyfill.registerDialog(fundDialog1);
+  }
+  showDialogButton.addEventListener('click', function() {
+    fundDialog1.showModal();
+  });
+  dialog.querySelector('.close').addEventListener('click', function() {
+    fundDialog1.close();
+  });
+  var notification = document.querySelector('.mdl-js-snackbar');
+var data = {
+  message: 'Funds Sent',
+  actionHandler: function(event) {},
+  actionText: 'Undo',
+  timeout: 10000
+};
+</script>
