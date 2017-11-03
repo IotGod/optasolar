@@ -1,5 +1,5 @@
 # app
-The Ethereum SOLA Token based token Ðapp for controlling your solar system, investing, and managing projects, made using the Electron Platform, Embark Framework, and Status.im. Runnng on EVM using Solidity smart contract scripting language.
+The Ethereum SOLA Token based token Ðapp for controlling your solar system, investing, and managing projects, made using the Electron Platform, Embark Framework, and Status.im, IPFS, and the Raiden Network. Runnng on EVM using Solidity smart contract scripting language.
 [![Job Status](https://inspecode.rocro.com/badges/github.com/solariot/app/status?token=_4455AJS85fiY-DxkY2nQ2R3vCsWQAQZv6ERc9EnaGk)](https://inspecode.rocro.com/jobs/github.com/solariot/app/latest?completed=true)
 ## Build Project
 
