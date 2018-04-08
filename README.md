@@ -3,6 +3,9 @@ The Ethereum SOLA Token based token Ðapp for controlling your solar system, inv
 [![Job Status](https://inspecode.rocro.com/badges/github.com/solariot/app/status?token=_4455AJS85fiY-DxkY2nQ2R3vCsWQAQZv6ERc9EnaGk)](https://inspecode.rocro.com/jobs/github.com/solariot/app/latest?completed=true)
 ## Build Project
 
+To build the project, you will need to install the following dependencies:
+```npm install -g embark```
+
 ```npm install```
 To compile the ejs templates, we need to use ```./do```
 
