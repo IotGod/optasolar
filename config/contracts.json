@@ -2,6 +2,9 @@
   "default": {
     "gas": "auto",
     "contracts": {
+    },
+    "versions":{
+      "web3.js":"1.0.0-beta"
     }
   }
 }
