@@ -4,7 +4,7 @@ The Ethereum SOLA Token based token Ðapp for controlling your solar system, inv
 ## Build Project
 
 To build the project, you will need to install the following dependencies:
-```npm install -g embark truffle```
+```npm install -g embark truffle ejs-cli```
 
 To compile the ejs templates, we need to use ```./do```
 
