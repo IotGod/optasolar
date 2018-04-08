@@ -5,7 +5,7 @@
   "scripts": {
     "test": "embark test"
   },
-  "author": "",
+  "author": "Kyler Chin",
   "license": "ISC",
   "homepage": "",
   "devDependencies": {
