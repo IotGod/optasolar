@@ -8,6 +8,8 @@
   "author": "Kyler Chin",
   "license": "ISC",
   "homepage": "",
-  "devDependencies": {
+  "devDependencies": {},
+  "dependencies": {
+    "ejs": "^2.5.8"
   }
 }
