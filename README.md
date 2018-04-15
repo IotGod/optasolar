@@ -1,10 +1,28 @@
 # app
 The Ethereum SOLA Token based token Ðapp for controlling your solar system, investing, and managing projects, made using the  Embark Framework, and Status.im, IPFS, and the Raiden Network. Runnng on EVM using Solidity smart contract scripting language.
 
-## Build Project
+## Dependencies
+
+System dependencies:
+
+Python NodeJS VirtualENV pip3 gcc
 
 To build the project, you will need to install the following dependencies:
 ```npm install -g embark truffle ejs-cli```
+
+You will now need to install µRaiden to connect to the Raiden Network and perform ERC20 token transactions off chain.
+
+```virtualenv -p python3 env
+. env/bin/activate
+pip install microraiden
+
+git clone git@github.com:raiden-network/microraiden.git
+cd microraiden/
+cd microraiden/microraiden/webui/microraiden
+npm i && npm run build
+```
+
+## Compile Project
 
 To compile the ejs templates, we need to use ```./do```
 
