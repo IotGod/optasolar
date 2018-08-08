@@ -12,9 +12,9 @@
   "homepage": "",
   "devDependencies": {
     "electron": "^1.7.9",
-    "embark": "^2.5.2",
+    "embark": "^8.0.0",
     "gulp-watch": "^4.3.11",
-    "mocha": "^2.2.5"
+    "mocha": "^5.2.0"
   },
   "dependencies": {
     "ejs-cli": "^2.0.0",
