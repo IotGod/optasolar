@@ -89,5 +89,6 @@ app/projects/projects-cards.html
 app/dashboard.html
 app/loading.html
 app/projects.html
+app/cards/*.html
 
 .node-xmlhttprequest-sync-*
