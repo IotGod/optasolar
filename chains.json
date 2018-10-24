@@ -1,1 +1,11 @@
-{}
+{
+  "0xb6cfeab83614da04c03db0fb8a6787a45d0be8d576fcc6f8f457a5a816d22ab3": {
+    "contracts": {
+      "0x77b9ad4e763df82b54f01d12bd6a65409ea0188b5dd331b5875dd82033385afc": {
+        "name": "Migrations",
+        "address": "0x0973e5c39d0d1ec929a21815c7e526ce6ee1af13"
+      }
+    },
+    "name": "development"
+  }
+}

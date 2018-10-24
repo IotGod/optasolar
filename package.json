@@ -1,13 +1,11 @@
 {
-  "name": "app",
+  "name": "solar-app/",
   "version": "0.0.1",
   "description": "",
-  "main": "main.js",
   "scripts": {
-    "start": "electron .",
     "test": "embark test"
   },
-  "author": "",
+  "author": "Kyler Chin",
   "license": "ISC",
   "homepage": "",
   "devDependencies": {
@@ -17,9 +15,6 @@
     "mocha": "^5.2.0"
   },
   "dependencies": {
-    "ejs-cli": "^2.0.0",
-    "electron": "^1.7.9",
-    "jazzicon": "^1.5.0",
-    "menubar": "^5.2.3"
+    "ejs": "^2.5.8"
   }
 }
