@@ -2,6 +2,7 @@
 The Ethereum SOLA Token based token Ðapp for controlling your solar system, investing, and managing projects, made using the  Embark Framework, and Status.im, IPFS, and the Raiden Network. Runnng on EVM using Solidity smart contract scripting language. This project will transition to IOTA in the very near future.
 
 [Please Read the Technical Paper](OptaSolar_Technical_Paper.pdf)
+
 [Pitch Deck and Diagrams](https://docs.google.com/presentation/d/1eFhxlvFMDl5ERUku_TumxqpgAD3rWSawwYiDVmmrobQ/edit?usp=sharing)
 
 ## Dependencies
