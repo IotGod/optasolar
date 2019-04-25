@@ -79,3 +79,16 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+//IoTA.Js connect with server:
+import { composeAPI } from '@iota/core'
+
+const iota = composeAPI({
+    provider: 'http://localhost:14265'
+})
+
+iota.getNodeInfo()
+    .then(info => console.log(info))
+    .catch(error => {
+        console.log(`Request error: ${error.message}`)
+    })
